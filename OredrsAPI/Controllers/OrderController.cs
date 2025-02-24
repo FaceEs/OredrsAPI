@@ -48,7 +48,7 @@ namespace OredrsAPI.Controllers
             try
             {
                 var order = await _orderService.AddOrderAsync(addModel);
-                return Created();
+                return Ok(order.Id);
             }
             catch (Exception ex) {
                 return BadRequest(ex.Message);
